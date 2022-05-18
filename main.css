@@ -63,6 +63,7 @@ nav {
     transition: all 1s ease;
     height: 10vh;
     animation: drop-nav 5s cubic-bezier(0.19, 0.95, 0.82, 1.04);
+    border-bottom: 1px solid var(--color-bronze)
 }
 
 @keyframes drop-nav{
@@ -87,11 +88,24 @@ nav:hover > .navbar {
 
 
 nav ul {
+    width: 30%;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(190, 190, 190);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
     letter-spacing: -1px;
     word-spacing: 1px;
-    width: 30%;
+    padding: 0 0.3rem;
+    text-align: center;
+}
+
+nav a:hover {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    color: white;
 }
 
 .nav__title {
@@ -105,6 +119,19 @@ nav ul {
 .nav__title p {
     font-size: 0.8rem;
 }
+
+@media only screen and (min-width: 1440px){
+    nav a {
+        font-size: 0.9rem;
+        padding: 0 0.3rem;
+    }
+    nav a:hover {
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+    }
+}
+
+/* -----------------------------------------------------------MAIN------------------------ */
 
 main {
     height: 100%;
@@ -279,6 +306,16 @@ section {
     /* margin-top: auto; */
 }
 
+@media only screen and (min-width: 1440px){
+    .section__four--content h3 {
+        font-size: 2rem;
+        overflow-y: hidden;
+    }
+    .section__four--content p {
+        font-size: 1.3rem;
+    }
+}
+
 /* SECTION FIVE */
 
 .section__five {
@@ -334,6 +371,7 @@ section {
     background: none;
     border: 2px solid white;
     font-family: 'Montserrat', sans-serif;
+    color: white;
     letter-spacing: 2px;
     font-size: 1rem;
     font-weight: 300;
@@ -341,6 +379,10 @@ section {
     top: 100vh;
     opacity: 1;
     transition: all 2s ease;
+}
+.section__five--content button:hover {
+    background-color: white;
+    color: black;
 }
 .section__five:hover .section__five--content button {
     top: 0;
@@ -351,6 +393,19 @@ section {
     margin-top: auto;
     height: 10vh;
     border-top: 2px solid var(--color-bronze);
+}
+
+@media only screen and (min-width: 1440px){
+    .section__five--content h3 {
+        font-size: 2.1rem;
+        overflow-y: hidden;
+    }
+    .section__five--content p {
+        font-size: 1.4rem;
+    }
+    .section__five--content button {
+        font-size: 1.5rem;
+    }
 }
 
 /* SECTION SIX */
@@ -404,6 +459,16 @@ section {
     height: 10vh;
     margin-top: auto;
     border-top: solid 2px var(--color-blue)
+}
+
+@media only screen and (min-width: 1440px){
+    .section__six--content h3 {
+        font-size: 2.1rem;
+        overflow-y: hidden;
+    }
+    .section__six--content p {
+        font-size: 1.4rem;
+    }
 }
 
 /* SECTION SEVEN*/
@@ -470,6 +535,11 @@ section {
     right: 100vh;
     opacity: 0;
     transition: all 2s ease-in;
+    color: white;
+}
+.section__seven--content button:hover {
+    background-color: white;
+    color: black;
 }
 .section__seven:hover .section__seven--content button {
     right: 0;
@@ -480,6 +550,19 @@ section {
     margin-top: auto;
     height: 10vh;
     border-top: 2px solid var(--color-bronze);
+}
+
+@media only screen and (min-width: 1440px){
+    .section__seven--content h3 {
+        font-size: 2.1rem;
+        overflow-y: hidden;
+    }
+    .section__seven--content p {
+        font-size: 1.4rem;
+    }
+    .section__seven--content button {
+        font-size: 1.5rem;
+    }
 }
 
 /* SECTION EIGHT */
@@ -556,6 +639,16 @@ section {
     border-top: 2px solid var(--color-blue);
 }
 
+@media only screen and (min-width: 1440px){
+    .section__eight--content h3 {
+        font-size: 2.1rem;
+        overflow-y: hidden;
+    }
+    .section__eight--content p {
+        font-size: 1.4rem;
+    }
+}
+
 /* SECTION NINE */
 
 .section__nine {
@@ -616,6 +709,11 @@ section {
     letter-spacing: 0px;
     font-size: 1rem;
     font-weight: 400;
+    transition: all 1s ease;
+}
+.section__nine--content button:hover {
+    background-color: var(--color-bronze);
+    color: var(--color-blue);
 }
 
 .last {
@@ -643,6 +741,19 @@ section {
     height: 40px;
 }
 
+@media only screen and (min-width: 1440px) {
+    .section__nine--content h3 {
+        font-size: 2.1rem;
+        overflow-y: hidden;
+    }
+    .section__nine--content p {
+        font-size: 1.4rem;
+    }
+    .section__nine--content button {
+        font-size: 1.5rem;
+    }
+}
+
 /* FOOTER */
 
 .footer {
@@ -651,8 +762,16 @@ section {
     background-position: top right;
 }
 
-.footer__one--one, .footer__one--two, .footer__one--three {
-    width: 33%;
+.footer__one {
+    margin-top: 18vh;
+}
+
+.footer__one--two, .footer__one--three {
+    width: 30%;
+}
+
+.footer__one--one {
+    width: 40%;
 }
 
 .footer__one--one h5 {
@@ -667,14 +786,32 @@ section {
     font-size: 1rem;
 }
 
+.footer__info img {
+    height: 40px;
+    width: 40px;
+}
+
 .footer__info p {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0px;
     width: 100%;
     margin-bottom: 0;
     text-align: start;
 }
 
+.contact__title {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.contact__info {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
 .footer__two--content {
     font-size: 0.6rem;
+    width: 75%;
 }
 
 .footer__two--content p{
@@ -697,3 +834,62 @@ section {
 .footer__two--content img{
     height: 15px;
 }
+
+.footer__info--two p {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0px;
+}
+
+.footer__info--two img {
+    height: 60px;
+    width: 60px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .footer__one--one h5 {
+        font-family:'Bellefair', serif;
+        letter-spacing: 1px;
+        font-size: 3.2rem;
+    }
+    
+    .footer__one--one p {
+        font-family:'Bellefair', serif;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+    .footer__info img {
+        height: 60px;
+        width: 60px;
+    }
+    
+    .footer__info p {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0px;
+        width: 100%;
+        margin-bottom: 0;
+        text-align: start;
+    }
+    
+    .contact__title {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    
+    .contact__info {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .footer__two--content {
+        font-size: 1rem;
+        width: 50%;
+    }
+    
+    .footer__two--content p{
+        font-size: 1rem;
+    }
+    .footer__two--content img{
+        height: 30px;
+    }
+}
+
