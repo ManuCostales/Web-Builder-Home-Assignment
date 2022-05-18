@@ -67,9 +67,6 @@ nav {
 }
 
 @keyframes drop-nav{
-    0%{
-
-    }
     25% {
         bottom: 0vh;
     }
@@ -84,8 +81,6 @@ nav {
 nav:hover > .navbar {
     bottom: 0;
 }
-
-
 
 nav ul {
     width: 30%;
@@ -161,35 +156,86 @@ section {
     color: white;
 }
 
+.section__one div {
+    overflow-y: hidden;
+}
+
+.title__div {
+    overflow-y: hidden;
+}
+
 .section__one img {
     transform: rotate(90deg);
+    animation: logo 2s ease forwards;
+    
+}
+@keyframes logo{
+    10%{
+        transform: rotate(90deg)
+    }
+    100%{
+        transform: rotate(0deg)
+    }
 }
 .section__one h1 {
     font-size: 5rem;
+    position: relative;
+    right: 100vh;
+    opacity: 0;
+    animation: title 2s ease forwards;
+}
+@keyframes title{
+    50%{
+        right: -10vh;
+    }
+    100%{
+        right: 0;
+        opacity: 1;
+    }
 }
 .section__one h2 {
-    font-size: 3rem;
+    font-size: 2rem;
+    position: relative;
+    top: 100vh;
+    opacity: 0;
+    animation: title-two 3s ease forwards;
+}
+@keyframes title-two{
+    50% {
+        top: 100vh;
+    }
+    70% {
+        top: -5vh;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
 }
 
 /* SECTION TWO */
 
+.section__two {
+}
+
 .show__video {
-    height: 100vh;
+    /* display: inline-block; */
+    height: 100%;
     width: 100vw;
 }
 
 .show__video video {
-    /* position: fixed; */
-    min-height: 100%;
-    min-width: 100%;
-    right: 0;
-    top: 100vh;
+    position: relative;
+    height: 100%;
+    /* min-width: 100vw; */
+    /* right: 0; */
+    /* top: 100vh; */
 }
 
 .show__video h4 {
     position: relative;
     width: 70%;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
     bottom: 80vh;
     color: white;
@@ -534,7 +580,7 @@ section {
     position: relative;
     right: 100vh;
     opacity: 0;
-    transition: all 2s ease-in;
+    transition: all 2s ease;
     color: white;
 }
 .section__seven--content button:hover {
