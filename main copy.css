@@ -1,0 +1,23 @@
+:root {
+    --color-blue: rgba(22, 45, 84, 1);
+    --color-bronze: rgba(157, 108, 56, 1);
+    --color-dark: #1A1A1A;
+    --color-gray: #808080;
+    --color-nav-bg: rgba(22, 45, 84, 0.65);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow-x: hidden;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+

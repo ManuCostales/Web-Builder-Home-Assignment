@@ -6,6 +6,8 @@
     --color-nav-bg: rgba(22, 45, 84, 0.65);
 }
 
+/* ----------------------------------------------RESET------------------ */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,6 +22,8 @@ html, body {
     min-height: 100vh;
 }
 
+/* --------------------------------------------SCROLLBAR----------------- */
+
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -33,9 +37,6 @@ html, body {
     background: var(--color-blue);
   }
 
-  /* *::-webkit-scrollbar-track {
-    background: rgba(22, 45, 84, 0.10);
-  } */
   ::-webkit-scrollbar-track {
     display: none;
     background: var(--color-blue);
@@ -47,7 +48,7 @@ html, body {
     border: 0px solid rgba(22, 45, 84, 0.40);
   }
 
-/* NAVBAR */
+/*-------------------------------------------NAVBAR---------------------*/
 
 nav {
     position: fixed;
@@ -88,9 +89,10 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: rgb(190, 190, 190);
+    color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
+    font-weight: 200;
     letter-spacing: -1px;
     word-spacing: 1px;
     padding: 0 0.3rem;
@@ -100,6 +102,7 @@ nav a {
 nav a:hover {
     border-left: 1px solid white;
     border-right: 1px solid white;
+    font-weight: 400;
     color: white;
 }
 
@@ -126,7 +129,7 @@ nav a:hover {
     }
 }
 
-/* -----------------------------------------------------------MAIN------------------------ */
+/* --------------------------------------------------MAIN------------------------ */
 
 main {
     height: 100%;
@@ -146,12 +149,9 @@ section {
     scroll-snap-align: start;
 }
 
-/* SECTION ONE */
+/* ----------------------------------------------------SECTION ONE */
 
 .section__one {
-    background-image: url(./media/img/background-1.jpg);
-    background-size: cover;
-    background-position: bottom center;
     font-family: 'Bellefair', serif;
     color: white;
 }
@@ -160,101 +160,183 @@ section {
     overflow-y: hidden;
 }
 
-.title__div {
-    overflow-y: hidden;
-}
-
 .section__one img {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     animation: logo 2s ease forwards;
-    
 }
 @keyframes logo{
     10%{
-        transform: rotate(90deg)
-    }
-    100%{
         transform: rotate(0deg)
     }
+    100%{
+        transform: rotate(90deg)
+    }
 }
-.section__one h1 {
+
+.section__one .section__one--title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 60vh;
+    left: 0vw;
+    padding: 0 10vw;
+}
+
+.section__one--title h1 {
     font-size: 5rem;
     position: relative;
-    right: 100vh;
+    left:50vh;
     opacity: 0;
     animation: title 2s ease forwards;
 }
 @keyframes title{
     50%{
-        right: -10vh;
+        left: 0vh;
     }
     100%{
-        right: 0;
+        left: 0;
         opacity: 1;
     }
 }
 .section__one h2 {
     font-size: 2rem;
     position: relative;
-    top: 100vh;
+    align-self: end;
+    right: 100vh;
     opacity: 0;
     animation: title-two 3s ease forwards;
 }
 @keyframes title-two{
-    50% {
-        top: 100vh;
-    }
-    70% {
-        top: -5vh;
-    }
     100%{
-        top: 0;
+        right: 0;
         opacity: 1;
     }
 }
 
-/* SECTION TWO */
-
-.section__two {
-}
-
 .show__video {
-    /* display: inline-block; */
-    height: 100%;
+    height: 100vh;
     width: 100vw;
 }
 
 .show__video video {
-    position: relative;
+    object-fit: cover;
     height: 100%;
-    /* border-left: 2px solid var(--color-blue) */
-    /* min-width: 100vw; */
-    /* right: 0; */
-    /* top: 100vh; */
+    width: 100vw;
 }
 
-.show__video h4 {
-    position: relative;
-    width: 70%;
-    margin: 0;
-    text-align: center;
-    bottom: 80vh;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-    font-weight: 300;
-    font-size: 3rem;
+@media only screen and (min-width: 1300px){
+    .section__one--title h1 {
+        font-size: 7rem;
+    }
+    .section__one img {
+        height: 70px;
+    }
+    .section__one h2 {
+        font-size: 3rem;
+    }
 }
 
-/* SECTION THREE */
+@media only screen and (min-width: 1800px){
+    .section__one--title h1 {
+        font-size: 10rem;
+    }
+    .section__one img {
+        height: 100px;
+    }
+    .section__one h2 {
+        font-size: 4rem;
+    }
+}
 
-.section__three {
-    background-image: url(./media/img/background-7.jpg);
+/* ----------------------------------------------------SECTION TWO */
+
+.section__two {
+    background-image: url(./media/img/background-1.jpg);
     background-size: cover;
-    background-position: bottom right;
+    background-position: bottom center;
+    padding-top: 28vh;
 }
 
-/* SECTION FOUR */
+.section__two div {
+    opacity: 0;
+    transition: all 2s ease-out;
+    position: relative;
+}
+.section__two:hover div {
+    opacity: 1;
+}
+
+.text-one {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: white;
+}
+
+.text-two {
+    font-family: 'lato', sans-serif;
+    letter-spacing: -1px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: white;
+}
+
+.section__two button {
+    width: 30%;
+    padding: 1rem;
+    background: none;
+    border: 2px solid white;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 300;
+    position: relative;
+    top: 100vh;
+    opacity: 0;
+    transition: all 2s ease;
+    color: white;
+}
+.section__two:hover button {
+    top: 0;
+    opacity: 1;
+}
+.section__two button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.section__two .more {
+    margin-top: auto;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    transition: all 3s ease;
+    opacity: 0;
+    top: 100vh;
+}
+.section__two:hover .more {
+    opacity: 1;
+    top: 0;
+}
+
+@media only screen and (min-width: 1600px){
+    .text-one {
+        font-size: 2.4rem;
+    }
+    .text-two {
+        font-size: 2rem;
+    }
+    .section__two .more {
+        font-size: 1.5rem;
+    }
+}
+
+/* ----------------------------------------------------SECTION FOUR */
 
 .section__four {
     background-image: url(./media/img/background-palms-2.jpg);
@@ -350,7 +432,6 @@ section {
 .section__four--footer {
     border-top: 2px solid black;
     height: 10vh;
-    /* margin-top: auto; */
 }
 
 @media only screen and (min-width: 1440px){
@@ -363,7 +444,7 @@ section {
     }
 }
 
-/* SECTION FIVE */
+/* ----------------------------------------------------SECTION FIVE */
 
 .section__five {
     background-image: url(./media/img/background-2.jpg);
@@ -403,12 +484,10 @@ section {
     font-weight: 200;
     font-size: 1rem;
     position: relative;
-    /* left: 100vw; */
     opacity: 0;
     transition: all 1s ease-in;
 }
 .section__five:hover .section__five--content p {
-    /* left: 0; */
     opacity: 1;
 }
 
@@ -455,7 +534,7 @@ section {
     }
 }
 
-/* SECTION SIX */
+/* ----------------------------------------------------SECTION SIX */
 
 .section__six {
     background-image: url(./media/img/background-3.jpg);
@@ -518,7 +597,7 @@ section {
     }
 }
 
-/* SECTION SEVEN*/
+/* ----------------------------------------------------SECTION SEVEN */
 
 .section__seven {
     background-image: url(./media/img/background-4.jpg);
@@ -612,7 +691,7 @@ section {
     }
 }
 
-/* SECTION EIGHT */
+/* ----------------------------------------------------SECTION EIGHT */
 
 .section__eight--one {
     background-image: url(./media/img/background-5.jpg);
@@ -696,7 +775,7 @@ section {
     }
 }
 
-/* SECTION NINE */
+/* ----------------------------------------------------SECTION NINE */
 
 .section__nine {
     background-image: url(./media/img/background-palms-2.jpg);
@@ -801,7 +880,7 @@ section {
     }
 }
 
-/* FOOTER */
+/* ----------------------------------------------------FOOTER */
 
 .footer {
     background-image: url(./media/img/footer-bg.jpg);
@@ -939,4 +1018,6 @@ section {
         height: 30px;
     }
 }
+
+/* ----------------------------------------------------END */
 
