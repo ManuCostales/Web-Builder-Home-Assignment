@@ -22,7 +22,7 @@ html, body {
     min-height: 100vh;
 }
 
-#shadow-host-companion {
+section#shadow-host-companion {
     display: none !important;
 }
 
